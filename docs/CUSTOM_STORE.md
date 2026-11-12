@@ -1,7 +1,7 @@
 # Connect your own website (custom e-commerce)
 
 You can build any storefront — plain HTML + a backend, Next.js, Laravel, Django,
-a mobile app — and connect it to NodeDR POS with a small REST API. Your website
+a mobile app — and connect it to ShopLite with a small REST API. Your website
 takes the order **and the payment and issues the customer's invoice**; the POS
 only reserves stock, lets the shop pack and hand the order over, and tells your
 site every time the status changes. **The POS never bills online orders.**

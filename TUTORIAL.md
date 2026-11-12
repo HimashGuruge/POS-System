@@ -1,17 +1,17 @@
-# NodeDR POS: installation and step-by-step tutorial
+# ShopLite: installation and step-by-step tutorial
 
-NodeDR POS is a free, open-source point-of-sale and inventory app for shops.
+ShopLite is a free, open-source point-of-sale and inventory app for shops.
 This guide walks through installation, first-time setup, adding products,
 making a sale, and the other tools available in the app. Every screenshot in
 [`docs/screenshots/`](docs/screenshots/) is included below.
 
-## 1. Install NodeDR POS
+## 1. Install ShopLite
 
 Choose the option that matches your device:
 
-- **Windows 10/11 desktop app:** install [NodeDR POS from the Microsoft
+- **Windows 10/11 desktop app:** install [ShopLite from the Microsoft
   Store](https://apps.microsoft.com/store/detail/9N4D0GW2XZ37?cid=DevShareMCLPCS).
-- **CasaOS / ZimaOS:** install the [NodeDR POS CasaOS
+- **CasaOS / ZimaOS:** install the [ShopLite CasaOS
   app](casaos/README.md) from the app listing or follow its guide.
 - **Windows with WSL2, macOS, or Linux:** open PowerShell on Windows, or
   Terminal on macOS/Linux, and paste the matching one-line installer:
@@ -29,7 +29,7 @@ Choose the option that matches your device:
   ```
 
   Follow the installer prompts. It sets up Docker when needed, downloads and
-  starts NodeDR POS, then prints the address to open. On the computer running
+  starts ShopLite, then prints the address to open. On the computer running
   the app, open <http://localhost:1994>. On another device on the same Wi-Fi,
   open `http://<computer-ip>:1994`.
 
@@ -50,10 +50,10 @@ it](README.md#where-to-run-it).
    strong password.
 2. Enter the shop name and address. Set the country, currency, and tax options
    that match your business. These details are used on receipts and invoices.
-3. Finish setup. NodeDR POS opens the dashboard; you can change company and
+3. Finish setup. ShopLite opens the dashboard; you can change company and
    tax settings later in **Settings**.
 
-![NodeDR POS dashboard showing sales, revenue trend, inventory alerts, and online orders](docs/screenshots/dashboard.png)
+![ShopLite dashboard showing sales, revenue trend, inventory alerts, and online orders](docs/screenshots/dashboard.png)
 
 ## 3. Add a product
 
@@ -65,14 +65,14 @@ it](README.md#where-to-run-it).
 4. Save the product. It appears in the inventory list and is available at
    checkout. Use CSV or Excel import for a larger catalogue.
 
-![NodeDR POS inventory list with product quantities and bulk actions](docs/screenshots/inventory.png)
+![ShopLite inventory list with product quantities and bulk actions](docs/screenshots/inventory.png)
 
-![NodeDR POS add-product form with barcode scan and generate options](docs/screenshots/add-product.png)
+![ShopLite add-product form with barcode scan and generate options](docs/screenshots/add-product.png)
 
 The app also has optional product features, including weighted items and
 IMEI/serial tracking. Review the product options before using those workflows.
 
-![NodeDR POS product and feature configuration](docs/screenshots/features.png)
+![ShopLite product and feature configuration](docs/screenshots/features.png)
 
 ## 4. Make a sale
 
@@ -86,15 +86,15 @@ IMEI/serial tracking. Review the product options before using those workflows.
 5. From the confirmation, print the receipt, download a PDF, or use a
    supported receipt printer. Sales are listed under **Sales**.
 
-![NodeDR POS checkout with cart, a weighed item, and a UPI payment QR](docs/screenshots/pos.png)
+![ShopLite checkout with cart, a weighed item, and a UPI payment QR](docs/screenshots/pos.png)
 
 For products marked as IMEI/serial tracked, turn on tracking in
 **Settings → Features**. At checkout, enter the identifier for each unit; the
 identifier and warranty details can be printed on the bill and looked up later.
 
-![Optional IMEI capture during a NodeDR POS sale](docs/screenshots/product-imei.png)
+![Optional IMEI capture during a ShopLite sale](docs/screenshots/product-imei.png)
 
-![NodeDR POS checkout prompting for the IMEI of each unit](docs/screenshots/imei-sale.png)
+![ShopLite checkout prompting for the IMEI of each unit](docs/screenshots/imei-sale.png)
 
 ## 5. Use the other sections
 
@@ -119,7 +119,7 @@ in **Settings → Online stores**, or connect a custom website using the API
 guide. Products are matched by SKU. Orders can represent a web-paid order or
 an order paid for at pickup.
 
-![NodeDR POS online order board with New, Packing, Ready, and Collected columns](docs/screenshots/orders.png)
+![ShopLite online order board with New, Packing, Ready, and Collected columns](docs/screenshots/orders.png)
 
 ### Reports and exports
 
@@ -128,7 +128,7 @@ gross profit, average bill, category sales, hourly trends, and top products.
 The tax filing area provides GSTR-1 CSV sections and a region-neutral tax
 summary. Review exported tax figures with your accountant before filing.
 
-![NodeDR POS reports with revenue, margin, category breakdown, and hourly trends](docs/screenshots/reports.png)
+![ShopLite reports with revenue, margin, category breakdown, and hourly trends](docs/screenshots/reports.png)
 
 ### Team access
 
@@ -141,12 +141,12 @@ Use **Settings → Receipt** to configure receipt details. Use
 **Settings → Invoice & signature** for the A4 invoice layout and shop
 signature. The app can print receipts or create A4 invoices with tax details.
 
-![NodeDR POS A4 tax invoice with tax breakdown and warranty table](docs/screenshots/invoice-a4.png)
+![ShopLite A4 tax invoice with tax breakdown and warranty table](docs/screenshots/invoice-a4.png)
 
 When IMEI/serial tracking is enabled, open **Warranty** and scan or enter an
 identifier to find the sale and warranty status.
 
-![NodeDR POS warranty lookup showing sale date and warranty status](docs/screenshots/warranty.png)
+![ShopLite warranty lookup showing sale date and warranty status](docs/screenshots/warranty.png)
 
 ## 7. Back up and update
 

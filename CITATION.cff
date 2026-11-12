@@ -1,7 +1,7 @@
 cff-version: 1.2.0
-message: "If you use NodeDR POS in research, teaching, or a public project, please cite it."
+message: "If you use ShopLite in research, teaching, or a public project, please cite it."
 type: software
-title: "NodeDR POS"
+title: "ShopLite"
 authors:
   - family-names: Ranjit
     given-names: Raktim

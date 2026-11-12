@@ -68,13 +68,13 @@ services:
       ports:
         - container: "3000"
           description:
-            en_US: NodeDR POS web interface
+            en_US: ShopLite web interface
           protocol: tcp
 
   # Powers the in-app "Update now" button. Does nothing on its own (no
   # polling): when an admin presses the button, the backend tells it which
   # published version to move to, and it pulls that version of the two
-  # NodeDR POS images above and recreates those two containers (nothing else).
+  # ShopLite images above and recreates those two containers (nothing else).
   # Needs the Docker socket to do that; data in /DATA/AppData is untouched.
   updater:
     image: ghcr.io/raktim94/nodedr-pos-updater:1.6.2
@@ -92,7 +92,7 @@ services:
       volumes:
         - container: /var/run/docker.sock
           description:
-            en_US: Docker socket, used only by the in-app "Update now" button to move the two NodeDR POS containers to a newer version.
+            en_US: Docker socket, used only by the in-app "Update now" button to move the two ShopLite containers to a newer version.
 
 networks:
   nodedr-pos:
@@ -114,12 +114,12 @@ x-casaos:
     - https://cdn.jsdelivr.net/gh/Raktim94/nodedr-pos@master/casaos/screenshot-2.png
     - https://cdn.jsdelivr.net/gh/Raktim94/nodedr-pos@master/casaos/screenshot-3.png
   title:
-    en_US: NodeDR POS
+    en_US: ShopLite
   tagline:
     en_US: Offline-first point of sale and inventory for small retail shops
   description:
     en_US: |
-      NodeDR POS is a free, open-source, offline-first Point of Sale and
+      ShopLite is a free, open-source, offline-first Point of Sale and
       inventory management system for small retail shops. No subscription,
       no internet connection required, no data ever leaving your home
       server — it's built to run on your own hardware and stay there.
@@ -188,7 +188,7 @@ x-casaos:
 
       1.4.0 (2026-10-07):
       - New: in-app updates. Settings > Updates shows when a new version is
-        available and updates NodeDR POS with one click.
+        available and updates ShopLite with one click.
       - Many more currencies (incl. Hong Kong dollar), online orders, IMEI &
         warranty, purchasing, reports and more — see the project README.
 

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/logo.png" alt="NodeDR POS logo" width="160">
+  <img src="docs/logo.png" alt="ShopLite logo" width="160">
 </p>
 
 # nodedr-pos
@@ -10,10 +10,10 @@
 [![Offline-first](https://img.shields.io/badge/offline--first-yes-success)](#)
 [![CasaOS / ZimaOS](https://img.shields.io/badge/CasaOS%20%2F%20ZimaOS-one--click%20app-1F6FEB)](casaos/README.md)
 
-**[Try NodeDR POS](https://pos.nodedr.com/)** · **[Case study](https://www.raktimranjit.com/projects/nodedr-pos)** · **[Maintainer: Raktim Ranjit](https://www.raktimranjit.com/)**
+**[Try ShopLite](https://pos.nodedr.com/)** · **[Case study](https://www.raktimranjit.com/projects/nodedr-pos)** · **[Maintainer: Raktim Ranjit](https://www.raktimranjit.com/)**
 
 <p align="center">
-  <img src="docs/assets/hero-animated.svg" alt="NodeDR POS: animated overview with an illustrative sample screen" width="100%">
+  <img src="docs/assets/hero-animated.svg" alt="ShopLite: animated overview with an illustrative sample screen" width="100%">
 </p>
 
 
@@ -41,7 +41,7 @@ tablet/phone on the same network.
 </p>
 
 
-NodeDR POS is a web app that runs on **one machine in your shop** (the "till"
+ShopLite is a web app that runs on **one machine in your shop** (the "till"
 or a small server). Every phone, tablet or PC on the same Wi-Fi then opens it in
 a browser at `http://<that-machine>:1994`. Pick the option that matches that
 machine:
@@ -52,7 +52,7 @@ machine:
 | 🐳 **Docker host, NAS or VPS** | [**One-command Docker Compose install**](#one-click-install) | Docker |
 | 🏠 **CasaOS / ZimaOS box** | [**CasaOS app**](casaos/README.md) | nothing else |
 
-These are the supported ways to install NodeDR POS. Standalone Windows, macOS,
+These are the supported ways to install ShopLite. Standalone Windows, macOS,
 and Linux installer downloads are not distributed. Use Docker Compose on Mac
 or Linux.
 
@@ -60,7 +60,7 @@ or Linux.
 
 Paste the command for your terminal. The quickstart checks requirements,
 installs Docker where supported if it is missing, then downloads and starts
-NodeDR POS. On first use, Windows may ask for one restart while it enables
+ShopLite. On first use, Windows may ask for one restart while it enables
 WSL2; run the same command again after restarting.
 
 **Windows PowerShell**
@@ -77,7 +77,7 @@ curl -fsSL https://raw.githubusercontent.com/Raktim94/nodedr-pos/master/scripts/
 
 When installation finishes, open <http://localhost:1994>. On another phone,
 tablet, or computer on the same Wi-Fi, open `http://<computer-ip>:1994` using
-the address of the machine running NodeDR POS. On Linux, the installer may
+the address of the machine running ShopLite. On Linux, the installer may
 need `sudo` to install Docker. On macOS, Homebrew is needed if Docker is not
 already installed. The Microsoft Store and CasaOS app remain the simplest
 options for those platforms.
@@ -120,7 +120,7 @@ your own in `.env` on a public server). To update by hand instead:
 Printers, barcode scanners and other hardware: [Hardware setup](#hardware-setup).
 What is verified and what still needs real-device testing: [docs/ROADMAP.md](docs/ROADMAP.md).
 
-## How to use NodeDR POS
+## How to use ShopLite
 
 Start at the dashboard, then follow this workflow. The [full step-by-step
 tutorial](TUTORIAL.md) includes the complete setup guide and screenshot gallery.
@@ -132,7 +132,7 @@ strong password. Enter your shop name and address, then choose the currency and
 tax options that fit your business. Finish setup to open the dashboard. Company
 and tax details can be changed later in **Settings**.
 
-![NodeDR POS dashboard showing sales, inventory alerts, and online orders](docs/screenshots/dashboard.png)
+![ShopLite dashboard showing sales, inventory alerts, and online orders](docs/screenshots/dashboard.png)
 
 ### 2. Add products and set stock
 
@@ -231,7 +231,7 @@ All tutorial screenshots are in [`docs/screenshots/`](docs/screenshots/):
 ## Contents
 
 - [Install](#install)
-- [How to use NodeDR POS](#how-to-use-nodedr-pos)
+- [How to use ShopLite](#how-to-use-nodedr-pos)
 - [Features](#features)
 - [Architecture](#architecture)
 - [Tech stack](#tech-stack)
@@ -458,7 +458,7 @@ Requires [Docker](https://docs.docker.com/get-docker/) and Docker Compose
 ### One-click install
 
 Use the [one-command installer above](#one-command-install-windows-macos-or-linux)
-to install and start NodeDR POS from PowerShell or a macOS/Linux terminal. It
+to install and start ShopLite from PowerShell or a macOS/Linux terminal. It
 downloads the project and runs the included setup for you.
 
 If you already cloned the repository and have Docker running, use
@@ -1284,10 +1284,10 @@ See [`MAINTAINERS.md`](MAINTAINERS.md) for project maintainers.
 
 ## Case study
 
-Read the [NodeDR POS case study](https://www.raktimranjit.com/projects/nodedr-pos) for the product background and design decisions.
+Read the [ShopLite case study](https://www.raktimranjit.com/projects/nodedr-pos) for the product background and design decisions.
 
 Maintainer: [Raktim Ranjit](https://www.raktimranjit.com/)
 
 ## Commercial licence
 
-Licensed under the AGPL-3.0. A [commercial licence](COMMERCIAL-LICENSE.md) is available on request for use without the AGPL obligations. The NodeDR POS name and logo are not covered by the AGPL.
+Licensed under the AGPL-3.0. A [commercial licence](COMMERCIAL-LICENSE.md) is available on request for use without the AGPL obligations. The ShopLite name and logo are not covered by the AGPL.

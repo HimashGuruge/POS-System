@@ -5,10 +5,10 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
-import { AlertTriangle, CircleDollarSign, Download, ShoppingBag, TrendingUp } from "lucide-react";
+import { AlertTriangle, CircleDollarSign, Download, PackagePlus, Plus, ShoppingBag, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Badge, Delta, PageHeader } from "@/components/ui/Bits";
-import { useLowStock } from "@/hooks/useProducts";
+import { useLowStock, useProducts } from "@/hooks/useProducts";
 import { useInvoices, useSalesAnalytics, useSalesSummary } from "@/hooks/useInvoices";
 import { useDueSummary, useTopDueCustomers } from "@/hooks/useCustomers";
 import { useShopSettings } from "@/hooks/useShopSettings";
@@ -27,6 +27,7 @@ export default function DashboardPage() {
   const { data: me } = useMe();
   const { data: shop } = useShopSettings();
   const { data: lowStock } = useLowStock();
+  const { data: products, isLoading: productsLoading } = useProducts();
   const { data: summary } = useSalesSummary();
   const { data: invoices } = useInvoices();
   const { data: analytics } = useSalesAnalytics();
@@ -42,6 +43,8 @@ export default function DashboardPage() {
 
   const sym = shop?.currencySymbol || "Rs.";
   const money = (n: number) => formatMoney(n, sym);
+  // A brand-new shop has no products yet — guide the first real step.
+  const hasProducts = (products?.length ?? 0) > 0;
   const trend = analytics?.trend ?? [];
   const today = trend.at(-1);
   const yesterday = trend.at(-2);
@@ -58,8 +61,39 @@ export default function DashboardPage() {
       <PageHeader
         title={`Good ${new Date().getHours() < 12 ? "morning" : new Date().getHours() < 18 ? "afternoon" : "evening"}${me ? `, ${me.name.split(" ")[0]}` : ""}`}
         subtitle="Here's how the shop is doing."
-        actions={<a href="/api/invoices/export.csv" download><Button variant="secondary" type="button"><Download className="h-4 w-4" aria-hidden="true" /> Sales CSV</Button></a>}
+        actions={
+          <>
+            <Button type="button" onClick={() => router.push("/pos")}>
+              <Plus className="h-4 w-4" aria-hidden="true" />
+              Start a sale
+            </Button>
+            <a href="/api/invoices/export.csv" download>
+              <Button variant="secondary" type="button">
+                <Download className="h-4 w-4" aria-hidden="true" /> Sales CSV
+              </Button>
+            </a>
+          </>
+        }
       />
+
+      {/* First-run guidance — shown only while the shop has no products. */}
+      {!productsLoading && !hasProducts && (
+        <div className="rise mb-6 flex flex-col gap-3 rounded-2xl border border-brand/30 bg-brand/5 p-5 sm:flex-row sm:items-center sm:justify-between" style={{ "--i": 0 } as React.CSSProperties}>
+          <div className="flex items-start gap-3">
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-brand-soft text-brand">
+              <PackagePlus className="h-5 w-5" aria-hidden="true" />
+            </span>
+            <div>
+              <p className="text-sm font-semibold text-foreground">Add your first products to start selling</p>
+              <p className="mt-0.5 text-sm text-foreground/60">You can scan barcodes or add items by hand. Once a product is in, the POS and sales will work.</p>
+            </div>
+          </div>
+          <Button type="button" onClick={() => router.push("/inventory")} className="shrink-0">
+            <PackagePlus className="h-4 w-4" aria-hidden="true" />
+            Add products
+          </Button>
+        </div>
+      )}
 
       {/* Bento: short KPI tiles, a larger chart, a ring, then lists. */}
       <div className="grid grid-cols-12 gap-4">
@@ -117,7 +151,7 @@ export default function DashboardPage() {
 
 function Kpi({ i, span, icon: Icon, label, value, sub, accent, tone }: { i: number; span: string; icon: React.ElementType; label: string; value: string; sub?: React.ReactNode; accent?: boolean; tone?: "warn" | "bad" }) {
   return (
-    <div className={`rise ${span} rounded-2xl border p-5 ${accent ? "border-transparent bg-[var(--green-900)] text-white" : "card-surface"}`} style={{ "--i": i } as React.CSSProperties}>
+    <div className={`rise ${span} rounded-2xl border p-5 ${accent ? "border-transparent bg-[var(--indigo-900)] text-white" : "card-surface"}`} style={{ "--i": i } as React.CSSProperties}>
       <div className="flex items-center gap-2">
         <Icon className={`h-4 w-4 ${accent ? "text-white/80" : tone === "bad" ? "text-danger" : tone === "warn" ? "text-warning" : "text-brand"}`} aria-hidden="true" />
         <p className={`text-xs font-medium ${accent ? "text-white/75" : "text-foreground-muted"}`}>{label}</p>

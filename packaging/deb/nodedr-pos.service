@@ -1,5 +1,5 @@
 [Unit]
-Description=NodeDR POS (Docker Compose)
+Description=ShopLite (Docker Compose)
 Documentation=https://pos.nodedr.com/docs
 Requires=docker.service
 After=docker.service network-online.target

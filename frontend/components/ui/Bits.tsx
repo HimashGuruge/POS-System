@@ -48,7 +48,7 @@ export function StatCard({
   accent?: boolean;
 }) {
   return (
-    <div className={clsx("rise rounded-2xl border p-5", accent ? "border-transparent bg-[var(--green-900)] text-white" : "card-surface")} style={{ "--i": index } as React.CSSProperties}>
+    <div className={clsx("rise rounded-2xl border p-5", accent ? "border-transparent bg-[var(--indigo-900)] text-white" : "card-surface")} style={{ "--i": index } as React.CSSProperties}>
       <p className={clsx("text-xs font-medium", accent ? "text-white/70" : "text-foreground-muted")}>{label}</p>
       <p className="num-xl mt-2">{value}</p>
       {sub && <div className={clsx("mt-2 text-xs", accent ? "text-white/70" : "text-foreground-muted")}>{sub}</div>}

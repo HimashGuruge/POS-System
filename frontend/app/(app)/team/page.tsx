@@ -21,7 +21,7 @@ const PERMS: { key: Permission; label: string; hint: string }[] = [
   { key: "purchasing", label: "Purchasing", hint: "Suppliers and purchase orders" },
   { key: "reports", label: "View reports", hint: "Profit, margins, GST exports" },
 ];
-const PASTELS = ["#e8f3ea", "#fdf0d5", "#e3eef9", "#f6e3ee", "#ece6f7", "#e0f3f0"];
+const PASTELS = ["#e8edfb", "#fdf0d5", "#e3eef9", "#f6e3ee", "#ece6f7", "#e0f3f0"];
 
 export default function TeamPage() {
   const { data: users = [], isLoading } = useUsers();
@@ -37,7 +37,7 @@ export default function TeamPage() {
           <li key={u.id} className="rise" style={{ "--i": i } as React.CSSProperties}>
             <button type="button" onClick={() => setOpen(u)} className="card-surface card-lift flex h-full w-full flex-col gap-3 p-5 text-left">
               <div className="flex items-center gap-3">
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-base font-semibold text-[#0d3b28]" style={{ background: PASTELS[i % PASTELS.length] }} aria-hidden="true">{u.name.trim()[0]?.toUpperCase()}</span>
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-base font-semibold text-[#1c244a]" style={{ background: PASTELS[i % PASTELS.length] }} aria-hidden="true">{u.name.trim()[0]?.toUpperCase()}</span>
                 <div className="min-w-0">
                   <p className="truncate font-semibold">{u.name}{u.id === me?.id && <span className="ml-1.5 text-xs font-normal text-foreground-muted">(you)</span>}</p>
                   <p className="truncate text-sm text-foreground-muted">{u.email}</p>

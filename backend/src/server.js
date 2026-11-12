@@ -151,8 +151,8 @@ function ensureFirewallRules() {
 
   const frontendPort = process.env.FRONTEND_PORT || '1994';
   const rules = [
-    { name: 'NodeDR POS Web', action: 'allow', port: frontendPort, extra: ['profile=private,domain'] },
-    { name: 'NodeDR POS API (internal only)', action: 'block', port: String(PORT), extra: [] },
+    { name: 'ShopLite Web', action: 'allow', port: frontendPort, extra: ['profile=private,domain'] },
+    { name: 'ShopLite API (internal only)', action: 'block', port: String(PORT), extra: [] },
   ];
 
   for (const rule of rules) {

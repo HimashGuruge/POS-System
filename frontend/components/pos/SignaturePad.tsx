@@ -24,7 +24,7 @@ export function SignaturePad({ title, onSave, onClose }: { title: string; onSave
     ctx.lineWidth = 2.2;
     ctx.lineCap = "round";
     ctx.lineJoin = "round";
-    ctx.strokeStyle = "#0d3b28";
+    ctx.strokeStyle = "#141b2d";
   }, []);
 
   function pos(e: React.PointerEvent<HTMLCanvasElement>) {

@@ -3,7 +3,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { api } from "@/lib/api";
 
-// NodeDR POS is offline-first: there is no cloud to sync with, so "sync
+// ShopLite is offline-first: there is no cloud to sync with, so "sync
 // status" here means "is the local backend on this network reachable" —
 // the thing that actually determines whether a sale can be recorded right
 // now. Polling is cheap (a single JSON field) and short-lived on failure

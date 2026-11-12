@@ -76,7 +76,7 @@ export default function CustomerDisplay() {
   const idle = !s || (s.lines.length === 0 && !s.thankYou);
 
   return (
-    <main className="flex min-h-screen flex-col bg-[var(--green-950)] p-8 text-white">
+    <main className="flex min-h-screen flex-col bg-[var(--indigo-950)] p-8 text-white">
       <header className="flex items-baseline justify-between">
         <h1 className="text-2xl font-semibold tracking-tight">{s?.shopName || "Welcome"}</h1>
         <p className="text-sm text-white/60">

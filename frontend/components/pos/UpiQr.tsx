@@ -40,7 +40,7 @@ export function UpiQr({ amount, reference, onUri }: { amount: number; reference?
     <div className="flex flex-col items-center gap-2 rounded-xl border border-border bg-white p-3">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       {img ? <img src={img} alt={`UPI payment QR for ${amount}`} width={200} height={200} /> : <div className="h-[200px] w-[200px] animate-pulse rounded bg-surface-muted" />}
-      <p className="text-xs font-medium text-[#17251d]">Scan with any UPI app · exact amount pre-filled</p>
+      <p className="text-xs font-medium text-[#141b2d]">Scan with any UPI app · exact amount pre-filled</p>
     </div>
   );
 }

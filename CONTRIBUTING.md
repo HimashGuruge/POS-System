@@ -1,6 +1,6 @@
-# Contributing to NodeDR POS
+# Contributing to ShopLite
 
-Thanks for considering a contribution to NodeDR POS — a free, offline-first
+Thanks for considering a contribution to ShopLite — a free, offline-first
 Point of Sale for small retail shops. This is a small, focused tool with a
 real production surface (Docker/CasaOS and a macOS app, all shipping from
 the same code), so this guide covers

@@ -16,25 +16,25 @@ const geistMono = Geist_Mono({
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:1994";
 const description =
-  "NodeDR POS is a free, open-source, offline-first Point of Sale and inventory management system for small retail shops. No subscription, no internet required.";
+  "ShopLite is a free, open-source, offline-first Point of Sale and inventory management system for small retail shops. No subscription, no internet required.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "NodeDR POS | Offline-First POS & Inventory Management",
-    template: "%s | NodeDR POS",
+    default: "ShopLite | Offline-First POS & Inventory Management",
+    template: "%s | ShopLite",
   },
   description,
   manifest: "/manifest.webmanifest",
   openGraph: {
     type: "website",
-    siteName: "NodeDR POS",
-    title: "NodeDR POS | Offline-First POS & Inventory Management",
+    siteName: "ShopLite",
+    title: "ShopLite | Offline-First POS & Inventory Management",
     description,
   },
   twitter: {
     card: "summary",
-    title: "NodeDR POS | Offline-First POS & Inventory Management",
+    title: "ShopLite | Offline-First POS & Inventory Management",
     description,
   },
 };
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  name: "NodeDR POS",
+  name: "ShopLite",
   applicationCategory: "BusinessApplication",
   operatingSystem: "Windows, Linux, Docker",
   description,

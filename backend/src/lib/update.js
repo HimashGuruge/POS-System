@@ -1,4 +1,4 @@
-// "Is a newer NodeDR POS published?" + "update me now".
+// "Is a newer ShopLite published?" + "update me now".
 //
 // Latest version = `version` in backend/package.json on the master branch.
 // Docker/CasaOS installs are then only told about it once the matching image

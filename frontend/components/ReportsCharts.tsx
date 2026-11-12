@@ -6,7 +6,7 @@
 import { Area, AreaChart, CartesianGrid, Cell, Pie, PieChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import type { Overview } from "@/hooks/useReports";
 
-const COLORS = ["#176c45", "#3d9a69", "#bfe8ce", "#d89a43", "#7aa88f", "#0d3b28", "#a8c9b4"];
+const COLORS = ["#4f46e5", "#6366f1", "#c7d2fe", "#d89a43", "#8b93e0", "#1c244a", "#a5b0f0"];
 
 export function RevenueArea({ data, sym }: { data: Overview["daily"]; sym: string }) {
   const rows = data.map((d) => ({ ...d, label: new Date(d.date).toLocaleDateString(undefined, { day: "numeric", month: "short" }) }));
@@ -16,8 +16,8 @@ export function RevenueArea({ data, sym }: { data: Overview["daily"]; sym: strin
         <AreaChart data={rows} margin={{ left: 0, right: 8, top: 8, bottom: 0 }}>
           <defs>
             <linearGradient id="revFill" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#176c45" stopOpacity={0.28} />
-              <stop offset="100%" stopColor="#176c45" stopOpacity={0} />
+              <stop offset="0%" stopColor="#4f46e5" stopOpacity={0.28} />
+              <stop offset="100%" stopColor="#4f46e5" stopOpacity={0} />
             </linearGradient>
           </defs>
           <CartesianGrid vertical={false} stroke="var(--border)" />
@@ -34,7 +34,7 @@ export function RevenueArea({ data, sym }: { data: Overview["daily"]; sym: strin
               ) : null
             }
           />
-          <Area type="monotone" dataKey="revenue" stroke="#176c45" strokeWidth={2} fill="url(#revFill)" isAnimationActive animationDuration={700} />
+          <Area type="monotone" dataKey="revenue" stroke="#4f46e5" strokeWidth={2} fill="url(#revFill)" isAnimationActive animationDuration={700} />
         </AreaChart>
       </ResponsiveContainer>
     </div>

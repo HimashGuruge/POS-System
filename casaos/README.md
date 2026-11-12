@@ -1,6 +1,6 @@
-# NodeDR POS on CasaOS / ZimaOS
+# ShopLite on CasaOS / ZimaOS
 
-This directory holds the app store manifest and assets that let NodeDR POS
+This directory holds the app store manifest and assets that let ShopLite
 install as a one-click app on [CasaOS](https://casaos.io) and
 [ZimaOS](https://zimaspace.com) (ZimaOS uses the identical `x-casaos`
 compose schema).
@@ -44,7 +44,7 @@ convention CasaOS's own backup/restore UI expects for every other app.
 
 ## Why two containers, and why USB device access
 
-NodeDR POS is a two-container app (`backend` + `frontend`), same as the
+ShopLite is a two-container app (`backend` + `frontend`), same as the
 plain [`docker-compose.yml`](../docker-compose.yml) at the repo root — see
 [Architecture](../README.md#architecture) for why. The manifest declares
 `main: frontend` since that's the browsable service; CasaOS uses this to
@@ -133,4 +133,4 @@ docker rm -f nodedr-pos-frontend nodedr-pos-backend nodedr-pos-updater
 docker network rm nodedr-pos_nodedr-pos
 ```
 
-Then install NodeDR POS again from the app store.
+Then install ShopLite again from the app store.
