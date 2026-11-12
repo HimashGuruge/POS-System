@@ -65,8 +65,8 @@ Already cloned? Use the bundled installer to build both images and start the
 stack:
 
 ```bash
-git clone https://github.com/Raktim94/nodedr-pos.git
-cd nodedr-pos
+git clone https://github.com/HimashGuruge/POS-System.git
+cd POS-System
 ./install.sh
 ```
 
